@@ -8,8 +8,7 @@
 </template>
 
 <script>
-import shop from './../api/shop';
-import store from './../store/index';
+import store from '@/store/index';
 
 export default {
   computed: {
@@ -19,9 +18,7 @@ export default {
   },
 
   created() {
-    shop.getProducts(products => {
-      store.commit('setProducts', products);
-    });
+    store.dispatch('fetchProducts');
   },
 };
 </script>
