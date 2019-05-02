@@ -7,6 +7,7 @@ const _products = [
     { "id": 3, "title": "Charli XCX - Sucker CD", "price": 19.99, "inventory": 5 }
 ]
 
+
 export default {
     getProducts(cb) {
         setTimeout(() => cb(_products), 100)
