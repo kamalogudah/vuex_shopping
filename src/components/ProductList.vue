@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 export default {
   data() {
     return {
@@ -26,9 +26,9 @@ export default {
     ...mapState({
       products: state => state.products,
     }),
-    productIsInStock() {
-      return this.$store.getters.productIsInStock;
-    },
+    ...mapGetters({
+      productIsInStock: 'productIsInStock',
+    }),
   },
 
   methods: {
